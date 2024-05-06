@@ -1,0 +1,51 @@
+int main(void) {
+  
+//Declaração de variáveis.
+float valorBem, valorDeprec, taxaDeprec = 1.5, deprecAcumulada, valorBemDeprec;
+int ano, i; 
+
+  // Informações da aluna.
+  printf("Aluna: Camila da Silva Rosa - 428543\n"); 
+  printf("\n");
+  printf("\n");
+  
+     //Mensagem introdutória.
+      printf("Bem-vindo ao Calculador de Depreciação! Para prosseguir, informe os seguintes dados:\n");
+      printf("\n");
+
+  // Inserção de dados.  
+  printf("Informe o valor do bem a ser depreciado: "); // Valor do bem à ser depreciado.
+  scanf("%f", &valorBem);
+  
+  printf("Informe o período da depreciação <em anos>: "); // Período da depreciação, em anos.
+  scanf ("%d", &ano);   
+
+  printf("\n"); // Espaço de duas linhas (por estética).
+  printf("\n");
+  
+//Tabela de depreciação.
+printf("Ano      Valor do bem       Depreciação        Valor depreciado\n");
+printf("===============================================================\n");
+
+  //Estrutura de repetição e cálculo da depreciação.
+ for(i = 1; i <= ano; i++) { 
+   valorDeprec = valorBem * (taxaDeprec / 100.0);
+   valorBemDeprec = valorBem - valorDeprec; 
+   deprecAcumulada += valorDeprec;
+
+  // Mostra os resultados em ordem na tabela.
+  printf("\t %d   \t  %g  \t  %g              \t%g\n", i, valorBem, valorDeprec, valorBemDeprec); 
+
+   valorBem = valorBemDeprec; 
+ }  
+  printf("===============================================================\n");
+
+// Resultado final, depreciação acumulada.
+printf("Depreciação acumulada: %f\n", deprecAcumulada);
+
+printf("\n");
+printf("Fim do programa!");
+
+  
+  return 0;
+}

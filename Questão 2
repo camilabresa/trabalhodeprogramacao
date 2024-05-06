@@ -1,0 +1,36 @@
+int main(void) {
+    
+    // Declaração de variáveis.
+    int total_minu = 0;
+    int andCafe;
+    int a1, a2, a3;
+    int nfunc = 0;
+
+    // Inserção de dados - Quantidade de funcionários em cada andar.
+    printf("Informe a quantidade de funcionários em cada andar:\n");
+    scanf("%d %d %d", &a1, &a2, &a3);
+
+    // A quantidade de funcionários por andar deve ser até 1000. Verifica se a quantidade de funcionários por andar é válida.
+        if (a1 > 1000 || a1 <= 0 || 
+        a2 > 1000 || a2 <= 0 ||  
+        a3 > 1000 || a3 <= 0) {
+        printf("Ops! Número muito grande.\n");
+        return 0;
+    }
+
+    // Informa em que andar a cafeteira vai ficar.
+    printf("Informe o andar em que a cafeteira vai ficar: \n"); 
+      scanf("%d", &andCafe);
+  
+    // Cálculo de minutos.  
+   total_minu = (a1 * (andCafe - 1) + a2 * (andCafe == 2 ? 0 : (andCafe < 2 ? 1 : 2)) + a3 * (andCafe == 3 ? 0 : (andCafe < 3 ? 1 : 2)));
+     total_minu += 10;
+      
+    // Informa o tempo total.
+    printf("Minutos totais: %d \n", total_minu);
+
+    printf("\n");
+    printf("Fim do programa!");
+
+    return 0; 
+}  

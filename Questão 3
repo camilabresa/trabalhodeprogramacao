@@ -1,0 +1,54 @@
+int main(void) {
+  //Declaração de variáveis.
+    int numPart, numMin, pontuamin, pfase = 0;
+    int i, j, tp; 
+    int pont[1000]; //Vetor que armazena a pontuação dos competidores (até 1000)
+
+    printf("Camila da Silva Rosa - 428543");
+    printf("\n");
+    printf("\n");
+  
+    //Quantidade de participantes para a prova.
+    printf("\n");
+    printf("Informe o número de participantes:\n");
+    scanf("%d", &numPart); 
+    printf("\n");
+
+    //Quantos participantes passarão para a próxima fase.
+    printf("Informe a quantidade de competidores para a próxima fase:\n");
+    scanf("%d", &numMin);
+    printf("\n");
+
+    // Pontuação dos competidores.
+    printf("Agora, informe as pontuações dos competidores:\n");
+        for (i = 0; i < numPart; i++) {
+         scanf("%d", &pont[i]);
+        }
+
+    // Cálculo que ordena as pontuações
+    for (i = 0; i < numPart; i++) {
+        for (j = i + 1; j < numPart; j++) {
+            if (pont[i] < pont[j]) {
+                 tp = pont[i];
+                pont[i] = pont[j];
+                pont[j] = tp;
+            }
+        }
+    }
+
+    // Quantos competidores foram classificados.
+    for (i = 0; i < numPart; i++) {
+        if (pont[i] >= pont[numMin - 1]) {
+            pfase++;
+        }
+    }
+
+      //Fim do programa.
+      printf("\n");
+      printf("%d competidores passarão para a próxima fase.\n", pfase);
+    
+
+
+    return 0;
+
+}
